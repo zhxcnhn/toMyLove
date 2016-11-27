@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0030)http://www.bing-net.cn/mylove/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>献给我的小可爱——安妮</title>
+    <style type="text/css">
+        @font-face
+        {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+    <link href="./js/Jihan_love_files/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/Jihan_love_files/jquery.js"></script>
+    <script type="text/javascript" src="js/Jihan_love_files/garden.js"></script>
+    <script type="text/javascript" src="js/Jihan_love_files/functions.js"></script>
+	<script type="text/javascript" charset="UTF-8" async="" src="js/Jihan_love_files/jisuanqi.js"></script>
+	<link type="text/css" rel="stylesheet" href="chrome-extension://olmanbchlogbfhhgimnombopppdooidm/style/style.css">
+	<script type="text/javascript" src="js/Jihan_love_files/tule24.js"></script>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="content" style="width: 1110px; height: 625px; margin-top: 10px; margin-left: 116.5px;">
+            <div id="code" style="margin-top: 112.5px;">
+                <span class="comments">/**</span><br>
+                <span class="space"><span class="comments">*From 24 Sep, 2016</span><br>
+                <span class="space"><span class="comments">*----------  -</span><br>
+                
+                <span class="space"><span class="comments">我不会太多的甜言蜜语，</span><br>
+                <span class="space"><span class="comments">只会傻傻的给你重复我喜欢你，我爱你</span><br>
+                <span class="space"><span class="comments">我如此笨拙.........</span><br><br />
+                <span class="space"><span class="comments">想和你在一起</span><br><br />
+                <span class="space"><span class="comments">喜欢你明媚的笑容，贪恋你柔软温暖的怀抱 </span><br>
+                <span class="space"><span class="comments">你一颦一簇，我会担心，我会忧虑 </span><br>
+                <span class="space"><span class="comments">思念，宛如野草一般，在我的脑海中疯狂蔓延</span><br>
+                <span class="space"><span class="comments">一种时时牵挂的感觉</span><br>
+				 <span class="space"><span class="comments">一种失意和伤心时可以依靠的感觉</span><br>
+                  <span class="space"><span class="comments">感谢生命中有你</span><br>
+                
+                
+                
+                
+                <span class="comments">**/</span></span></span></div>
+            <div id="loveHeart">
+                <canvas id="garden" width="670" height="625"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        宝宝，这是我们相爱在一起的时光。
+                        <div id="elapseClock"><span class="digit">65</span> days <span class="digit">02</span> hours <span class="digit">28</span> minutes <span class="digit">06</span> seconds</div>
+                    </div>
+                    <div id="loveu">
+                        爱你直到永永远远。<br>
+                        <div class="signature">
+                            - L.yo 郑昊翔</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function CurentTime() {
+            var now = new Date();
+
+            var year = now.getFullYear();       //年
+            var month = now.getMonth() + 1;     //月
+            var day = now.getDate();            //日
+
+            var hh = now.getHours();            //时
+            var mm = now.getMinutes();          //分
+            var se = now.getSeconds();          //秒
+
+            var clock = year + "-";
+
+            if (month < 10)
+                clock += "0";
+
+            clock += month + "-";
+
+            if (day < 10)
+                clock += "0";
+
+            clock += day + " ";
+
+            if (hh < 10)
+                clock += "0";
+            clock += hh + ":";
+
+            if (mm < 10) clock += '0';
+            clock += mm + ":";
+
+            if (se < 10)
+                clock += "0";
+            clock += se;
+
+            return (clock);
+        }
+        function getLoveTime() {
+            var strstartime = '2015-011-16 00:00:00';
+            var nowtime = CurentTime(); //获取服务器时间
+            //alert(nowtime)
+            var serverTime = new Date(nowtime); //服务器端时间
+            var StartTime = new Date(strstartime);
+            //alert(serverTime.getTime()); alert(StartTime.getTime());
+
+            var leftsecond = parseInt((serverTime.getTime() - StartTime.getTime()) / 1000);
+            if (leftsecond < 0) { leftsecond = 0; }
+            
+            day = parseInt(leftsecond / 3600 / 24); //剩余天数
+            hour = parseInt((leftsecond / 3600) % 24); //剩余小时
+            minute = parseInt((leftsecond / 60) % 60); //剩余分钟
+            second = parseInt(leftsecond % 60); //剩余秒
+
+            var res = day + 'days' + hour + 'hours' + minute + 'minutes' + second + 'seconds';
+            //alert(res);
+            return res;
+        }
+
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        var together = new Date('2016-09-24').getTime(); //or 2015-6-27 00:00:00
+        //var together = new Date();
+        //together.setFullYear(2015, 11, 16);//此写法是个BUG
+        //together.setHours(0);
+        //together.setMinutes(0);
+        //together.setSeconds(0);
+        //together.setMilliseconds(0);
+        //together = together.toString().replace(/-/g, '/');
+
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                startHeartAnimation();
+            }, 5000);
+
+            timeElapse(together);
+            setInterval(function () {
+                timeElapse(together);
+            }, 500);
+
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+</script>
+    <div style="text-align: center; clear: both">
+        <p>
+           谨以此献给我的小可爱——安妮，希望她能开开心心地度过每一天！O(∩_∩)O</p>
+    </div>
+
+
+<div style="display:none"><script src="script/Jihan_love_files/z_stat.php"></script></div></body></html>
